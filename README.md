@@ -72,6 +72,14 @@ class JobExecution(models.Model):
     def __str__(self):
         return f"{self.job} - {self.runtime}"
  ```
+## Admin.py
+The admin.py is a module that allows you to define the configuration of the Django admin interface for your models. This module defines the appearance and functionality of the admin interface, including which fields are displayed and how they are displayed, what filters are available, and what actions can be taken on individual objects or groups of objects.
+
+  ```bash
+from .models import Job,JobExecution
+admin.site.register(Job)
+admin.site.register(JobExecution)
+```
 ## Migrate the database
 
  ```bash
@@ -94,11 +102,3 @@ Password:
 Password (again):
  ```
 This command is used to create a new superuser account in your Django project. A superuser is a user with all permissions and can access the Django admin interface. Running this command prompts you to enter a username, email, and password for the new superuser account. Once created, you can use the superuser account to log in to the Django admin interface and manage your project's data.
-## Admin.py
-The admin.py is a module that allows you to define the configuration of the Django admin interface for your models. This module defines the appearance and functionality of the admin interface, including which fields are displayed and how they are displayed, what filters are available, and what actions can be taken on individual objects or groups of objects.
-
-  ```bash
-from .models import Job,JobExecution
-admin.site.register(Job)
-admin.site.register(JobExecution)
-```
