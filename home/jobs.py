@@ -1,7 +1,8 @@
-# add jobs
+import datetime
 
-def prints():
+
+def print_hello():
     print("Helo world !")
 
-def print2():
-    print("My world !")
+def print_time():
+    print(datetime.datetime.now())

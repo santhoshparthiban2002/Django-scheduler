@@ -82,4 +82,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SCHEDULER_DEFAULT = False
+SCHEDULER_DEFAULT = True
