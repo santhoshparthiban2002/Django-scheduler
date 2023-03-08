@@ -145,7 +145,8 @@ def run_job(job, function, year, month, day, hour, minute, second):
         job_execution.error = 'No Error'
         # Update the next run time of the job
         job = Job.objects.get(pk=job.pk)
-        time_interval = relativedelta(years=year, months=month, days=day, hours=hour, minutes=minute, seconds=second)
+        time_interval = relativedelta(years=year,months=month,days=day,hours=hour,
+            minutes=minute,seconds=second)
         job.next_run_time = timezone.now() + time_interval
         job.save()
     except Exception as e:
@@ -179,7 +180,7 @@ since minute="*" so 1 should be put in minute index
 ```bash
 # Schedule job 2 to run every 5th minute of every hour with an initial delay of 39 seconds
 if created or Job.objects.filter(job_name=job2).exists():
-    scheduler.add_job(run_job, 'cron', args=[job2, print_time, 0, 0, 0, 1, 0, 0], hour="*", minute=5, second=39)
+    scheduler.add_job(run_job,'cron',args=[job2,print_time,0,0,0,1,0,0],hour="*",minute=5,second=39)
 
 ```
 since hour="*" so 1 should be put in hour index
